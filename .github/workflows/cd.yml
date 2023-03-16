@@ -9,7 +9,7 @@ jobs:
  build:
     runs-on: ubuntu-latest
     env:
-      APP_NAME: "svelte_webapp"
+      APP_NAME: "sveltewebapp"
     steps:
       - name: Cloning Repo
         uses: actions/checkout@v3
