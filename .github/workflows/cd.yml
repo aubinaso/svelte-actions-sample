@@ -22,9 +22,14 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build --if-present
+      - name: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
       - name: Run Azure WebApp
         uses: azure/webapps-deploy@v1
         with:
           app-name: ${{ env.APP_NAME }}
-          creds: ${{ env.AZURE_CREDENTIALS }}
+      - name: logout
+        run: |
+          az logout
    
